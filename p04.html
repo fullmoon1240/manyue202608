@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI新品机会雷达 · 价值边界</title>
+  <style>
+    :root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--font-sans); }
+    body { overflow-x: hidden; }
+    .stage {
+      position: relative;
+      width: 1920px;
+      min-height: 1080px;
+      transform-origin: top left;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 14%, var(--accent-soft), transparent 30%),
+        linear-gradient(135deg, var(--bg), var(--bg-soft));
+    }
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      pointer-events: none;
+    }
+    .page { position: relative; z-index: 1; padding: 86px 118px 92px; }
+    .eyebrow { color: var(--accent); font-family: var(--font-mono); font-size: 16px; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: 18px 0 0; max-width: 1500px; font-size: 66px; line-height: 1.12; letter-spacing: -.035em; }
+    .accent { color: var(--accent); }
+    .main { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 92px; align-items: center; margin-top: 68px; }
+    .signal { padding-left: 26px; border-left: 3px solid var(--accent); }
+    .metric { display: flex; align-items: baseline; gap: 18px; margin: 0 0 28px; }
+    .metric strong { font-family: var(--font-mono); font-size: 76px; line-height: 1; color: var(--white); letter-spacing: -.05em; }
+    .metric span { max-width: 280px; color: var(--muted); font-size: 23px; line-height: 1.45; }
+    .note { margin-top: 36px; max-width: 620px; color: var(--muted); font-size: 22px; line-height: 1.6; }
+    .ladder { position: relative; display: grid; gap: 18px; }
+    .step { display: grid; grid-template-columns: 72px 1fr; gap: 22px; align-items: center; min-height: 106px; padding: 16px 24px; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: 0; }
+    .number { font-family: var(--font-mono); font-size: 18px; color: var(--accent); letter-spacing: .12em; }
+    .step h2 { margin: 0 0 7px; font-size: 29px; line-height: 1.25; }
+    .step p { margin: 0; color: var(--muted); font-size: 22px; line-height: 1.45; }
+    .boundary { margin-top: 22px; padding: 22px 28px; border: 1px solid var(--warning); border-radius: var(--radius-sm); color: var(--warning); font-size: 24px; font-weight: 650; }
+    .source { position: absolute; left: 118px; bottom: 54px; width: 1370px; color: var(--subtle); font-size: 16px; line-height: 1.4; }
+    .nav { position: absolute; z-index: 3; right: 112px; bottom: 48px; display: flex; align-items: center; gap: 18px; font-size: 16px; }
+    .nav a { color: var(--muted); text-decoration: none; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+    .nav .count { color: var(--accent); font-family: var(--font-mono); min-width: 60px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <main class="page">
+      <div class="eyebrow">VALUE / 价值边界</div>
+      <h1>“几百万销售额”是后验目标，<br><span class="accent">五天先降低选错方向的概率</span></h1>
+      <section class="main">
+        <div class="signal">
+          <div class="metric"><strong>3,126</strong><span>亿元<br>2025 年中国城镇犬猫消费市场</span></div>
+          <div class="metric"><strong>12.2%</strong><span>宠物用品占比</span></div>
+          <div class="metric"><strong>286</strong><span>亿元<br>2024 年天猫宠物类目线上销售额</span></div>
+          <p class="note">这些大口径只证明宠物用品值得扫描，不能推导任一子类的销量、利润或立项价值。</p>
+        </div>
+        <div>
+          <div class="ladder">
+            <div class="step"><div class="number">01</div><div><h2>公开证据筛选</h2><p>形成可回源的机会假设</p></div></div>
+            <div class="step"><div class="number">02</div><div><h2>业务采用与一手验证</h2><p>用户、供应链、成本与合规补证</p></div></div>
+            <div class="step"><div class="number">03</div><div><h2>上架与真实销售回写</h2><p>此后才能判断雷达的实际贡献</p></div></div>
+          </div>
+          <div class="boundary">五天不证明销量、利润、成功率或正式立项价值。</div>
+        </div>
+      </section>
+      <div class="source">来源：CIPS《2026 中国宠物行业白皮书》摘要；毕马威《2025 年中国宠物行业市场报告》。</div>
+    </main>
+    <nav class="nav" aria-label="幻灯片导航">
+      <a href="p03.html">← 上一页</a><span class="count">4 / 11</span><a href="p05.html">下一页 →</a>
+    </nav>
+  </div>
+  <script>
+    function fit() {
+      var s = innerWidth / 1920;
+      var stage = document.querySelector('.stage');
+      stage.style.transform = 'scale(' + s + ')';
+      document.body.style.height = (stage.offsetHeight * s) + 'px';
+    }
+    addEventListener('resize', fit); fit();
+    addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') location.href = 'p03.html';
+      if (event.key === 'ArrowRight') location.href = 'p05.html';
+    });
+  </script>
+</body>
+</html>

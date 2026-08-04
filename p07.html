@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>结果可以是零，但下一步必须唯一</title>
+  <style>
+:root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+/* 基调：深海蓝背景、青绿色为唯一主强调色；高层阅读型、低装饰、强对齐。 */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+    .stage {
+      width: 1920px;
+      min-height: 1080px;
+      position: relative;
+      overflow: hidden;
+      transform-origin: top left;
+      padding: 68px 96px 58px;
+      background:
+        linear-gradient(140deg, var(--bg) 0%, var(--bg) 54%, var(--bg-soft) 100%);
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 172px;
+      width: 1px;
+      height: 100%;
+      background: var(--line);
+      opacity: .42;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+    h1 {
+      margin: 18px 0 0;
+      font-size: 68px;
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      font-weight: 800;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1120px 1fr;
+      gap: 40px;
+      margin-top: 48px;
+      min-height: 610px;
+    }
+    .tracks {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .track {
+      display: grid;
+      grid-template-columns: 250px 250px 1fr;
+      align-items: center;
+      min-height: 190px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(90deg, var(--surface), var(--bg-soft));
+      box-shadow: 0 22px 54px var(--shadow);
+    }
+    .count {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 76px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -.06em;
+      background: var(--accent-soft);
+    }
+    .condition {
+      padding: 0 28px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.5;
+      border-right: 1px solid var(--line);
+    }
+    .condition strong {
+      display: block;
+      color: var(--text);
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 7px;
+    }
+    .decision {
+      padding: 0 34px;
+      color: var(--text);
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .decision::before {
+      content: "→";
+      display: inline-block;
+      margin-right: 20px;
+      color: var(--accent);
+      font-family: var(--font-mono);
+    }
+    .track.stop .count { color: var(--danger); background: var(--surface-2); }
+    .track.stop .decision::before { color: var(--danger); }
+    .track.hold .count { color: var(--warning); background: var(--surface-2); }
+    .track.hold .decision::before { color: var(--warning); }
+    .report-rule {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 610px;
+      padding: 38px 38px 34px;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+    }
+    .rule-label {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+    .report-hero {
+      margin-top: 28px;
+      color: var(--text);
+      font-size: 34px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .report-hero strong {
+      display: block;
+      margin: 8px 0;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 92px;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+    .selection {
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.55;
+    }
+    .selection b { color: var(--text); }
+    .not-rank {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      color: var(--warning);
+      background: var(--bg-soft);
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .nav {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 22px;
+    }
+    .page-no {
+      color: var(--text);
+      font-family: var(--font-mono);
+      letter-spacing: .08em;
+    }
+    .nav-links { display: flex; gap: 16px; }
+    .nav a {
+      padding: 8px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <header>
+      <div class="eyebrow">FROZEN RESULT / ONE NEXT STEP</div>
+      <h1>结果可以是零，<br>但下一步必须唯一</h1>
+    </header>
+
+    <main class="layout">
+      <section class="tracks" aria-label="冻结结果与唯一下一步">
+        <article class="track stop">
+          <div class="count">0</div>
+          <div class="condition"><strong>达标候选</strong>或关键来源失败</div>
+          <div class="decision">停止公开数据路线</div>
+        </article>
+        <article class="track hold">
+          <div class="count">1—2</div>
+          <div class="condition"><strong>达标候选</strong>冻结结果</div>
+          <div class="decision">保留一次性人工研究方法</div>
+        </article>
+        <article class="track go">
+          <div class="count">3—8</div>
+          <div class="condition"><strong>达标候选</strong>关键项全部回源</div>
+          <div class="decision">寻找一名具名业务接收者</div>
+        </article>
+      </section>
+
+      <aside class="report-rule" aria-label="完整报告范围规则">
+        <div>
+          <div class="rule-label">REPORT BOUNDARY</div>
+          <div class="report-hero">全部达标候选保留<br>完整报告最多<strong>5</strong>份</div>
+        </div>
+        <div class="selection">
+          超过 5 个时依次选择：<br>
+          <b>不同词簇覆盖</b> → <b>独立根来源更多</b> → <b>CND 编号更小</b>
+          <div class="not-rank">不代表市场或投资优先级</div>
+        </div>
+      </aside>
+    </main>
+
+    <nav class="nav" aria-label="幻灯片导航">
+      <div class="page-no">07 / 11</div>
+      <div class="nav-links">
+        <a href="p06.html">← 上一页</a>
+        <a href="p08.html">下一页 →</a>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    function fit() {
+      var s = innerWidth / 1920;
+      var stage = document.querySelector('.stage');
+      stage.style.transform = 'scale(' + s + ')';
+      document.body.style.height = (stage.offsetHeight * s) + 'px';
+    }
+    addEventListener('resize', fit); fit();
+    addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') location.href = 'p06.html';
+      if (event.key === 'ArrowRight') location.href = 'p08.html';
+    });
+  </script>
+</body>
+</html>

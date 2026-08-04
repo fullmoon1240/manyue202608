@@ -1,0 +1,29 @@
+:root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+/* 基调：深海蓝背景、青绿色为唯一主强调色；高层阅读型、低装饰、强对齐。 */

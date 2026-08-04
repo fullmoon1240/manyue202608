@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI新品机会雷达 · 方案 PPT</title>
+<style>
+  :root {
+    --bg: #07111F; --surface: #101D30; --surface-2: #15243A;
+    --text: #F5F8FC; --muted: #9CB0C5; --subtle: #60738A;
+    --accent: #35D0BA; --line: #263952;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    padding: 48px 24px 64px; line-height: 1.6;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; }
+  h1 { font-size: 30px; letter-spacing: .5px; }
+  .sub { color: var(--muted); margin-top: 8px; font-size: 15px; }
+  .badge {
+    display: inline-block; margin-top: 14px; padding: 4px 12px;
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 999px; color: var(--accent); font-size: 13px;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; overflow: hidden;
+    transition: transform .15s ease, border-color .15s ease;
+    text-decoration: none; color: var(--text); display: block;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--surface-2); }
+  .meta { padding: 14px 16px 16px; }
+  .meta .no { color: var(--subtle); font-size: 12px; letter-spacing: 1px; }
+  .meta .t { margin-top: 4px; font-size: 15px; font-weight: 600; }
+  .meta .go { color: var(--accent); font-size: 13px; margin-top: 8px; }
+  footer { text-align: center; color: var(--subtle); font-size: 13px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI 新品机会雷达 · 方案 PPT</h1>
+    <p class="sub">趣然 · 五天 MVP 公开资料研究验证包 · 2026-08</p>
+    <span class="badge">共 11 页 · 点击任意卡片进入浏览</span>
+  </header>
+  <div class="grid" id="grid"></div>
+  <footer>AI 生成内容仅供内部方案讨论使用 · 最终以 PRD 与需求契约为准</footer>
+</div>
+<script>
+  const slides = [
+    ["01", "封面", "slide-01.png", "p01.html"],
+    ["02", "为什么做：五天只购买一个决定", "slide-02.png", "p02.html"],
+    ["03", "真正的缺口：判断无法被复核", "slide-03.png", "p03.html"],
+    ["04", "价值边界", "slide-04.png", "p04.html"],
+    ["05", "一条七步研究路径", "slide-05.png", "p05.html"],
+    ["06", "MVP 功能总览", "slide-06.png", "p06.html"],
+    ["07", "结果可以是零，但下一步必须唯一", "slide-07.png", "p07.html"],
+    ["08", "单一事实源", "slide-08.png", "p08.html"],
+    ["09", "失败必须可见，未知绝不补造", "slide-09.png", "p09.html"],
+    ["10", "持续雷达是第三阶段，不是五天 MVP", "slide-10.png", "p10.html"],
+    ["11", "MVP 边界", "slide-11.png", "p11.html"]
+  ];
+  const grid = document.getElementById("grid");
+  grid.innerHTML = slides.map(([no, t, img, href]) => `
+    <a class="card" href="${href}">
+      <img class="thumb" src="rendered/${img}" alt="第 ${no} 页：${t}">
+      <div class="meta">
+        <div class="no">SLIDE ${no} / 11</div>
+        <div class="t">${t}</div>
+        <div class="go">打开此页 →</div>
+      </div>
+    </a>`).join("");
+</script>
+</body>
+</html>

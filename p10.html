@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>持续雷达是第三阶段，不是五天 MVP</title>
+  <style>
+    :root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+    /* 基调：深海蓝背景、青绿色为唯一主强调色；高层阅读型、低装饰、强对齐。 */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+    .stage {
+      width: 1920px;
+      min-height: 1080px;
+      transform-origin: top left;
+      position: relative;
+      overflow: hidden;
+      padding: 68px 96px 52px;
+      background:
+        radial-gradient(circle at 21% 53%, var(--accent-soft), transparent 31%),
+        linear-gradient(145deg, var(--bg), var(--bg-soft));
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .25;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px);
+      background-size: 100% 116px;
+      mask-image: linear-gradient(to right, var(--bg), transparent 88%);
+    }
+    main { position: relative; z-index: 1; }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    h1 {
+      max-width: 1560px;
+      margin: 0;
+      font-size: 68px;
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      font-weight: 760;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+    .roadmap {
+      display: grid;
+      grid-template-columns: 1.22fr 84px 1fr 84px 1fr 84px 1fr;
+      align-items: center;
+      margin-top: 72px;
+    }
+    .phase {
+      min-height: 458px;
+      display: flex;
+      flex-direction: column;
+      padding: 34px 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 26px 56px var(--shadow);
+    }
+    .phase.active {
+      border: 3px solid var(--accent);
+      background: linear-gradient(155deg, var(--surface-2), var(--accent-soft));
+      transform: translateY(-12px);
+    }
+    .phase.two { opacity: .82; }
+    .phase.three { opacity: .66; }
+    .phase.four { opacity: .5; }
+    .phase-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .phase-number {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .current {
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 750;
+    }
+    .phase h2 {
+      min-height: 78px;
+      margin: 28px 0 22px;
+      font-size: 32px;
+      line-height: 1.22;
+      font-weight: 720;
+    }
+    .question {
+      margin: 0;
+      color: var(--text);
+      font-size: 24px;
+      line-height: 1.48;
+    }
+    .result {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .result strong { color: var(--text); font-weight: 680; }
+    .gate {
+      display: grid;
+      place-items: center;
+      color: var(--subtle);
+    }
+    .gate-mark {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      transform: rotate(45deg);
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+    .gate-mark span {
+      transform: rotate(-45deg);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .principle {
+      width: max-content;
+      margin: 44px auto 0;
+      padding: 15px 28px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      background: var(--bg-soft);
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    .principle strong { color: var(--accent); }
+    .nav {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 34px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--subtle);
+      font-family: var(--font-mono);
+      font-size: 20px;
+    }
+    .nav-links { display: flex; gap: 12px; }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      background: var(--bg-soft);
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <main>
+      <p class="eyebrow">ROADMAP · 10</p>
+      <h1><em>持续雷达</em>是第三阶段，<br>不是五天 MVP</h1>
+
+      <section class="roadmap" aria-label="四阶段验证路线图">
+        <article class="phase active">
+          <div class="phase-top">
+            <span class="phase-number">01</span>
+            <span class="current">当前范围</span>
+          </div>
+          <h2>五天研究验证</h2>
+          <p class="question">公开数据路线能否形成可回源机会假设？</p>
+          <p class="result"><strong>交付</strong><br>冻结台账 · 摘要<br>0—5 份报告 · 唯一决定</p>
+        </article>
+
+        <div class="gate" aria-label="验证门一">
+          <div class="gate-mark"><span>门</span></div>
+        </div>
+
+        <article class="phase two">
+          <div class="phase-top"><span class="phase-number">02</span></div>
+          <h2>业务采用<br>与可行性</h2>
+          <p class="question">具名业务接收者是否采用？趣然能否承接？</p>
+          <p class="result"><strong>交付</strong><br>采用 / 拒绝 / 补证<br>一手验证记录</p>
+        </article>
+
+        <div class="gate" aria-label="验证门二">
+          <div class="gate-mark"><span>门</span></div>
+        </div>
+
+        <article class="phase three">
+          <div class="phase-top"><span class="phase-number">03</span></div>
+          <h2>持续雷达</h2>
+          <p class="question">持续采集是否值得建设？</p>
+          <p class="result"><strong>交付</strong><br>看板 · 预警<br>多人协作 · 预测</p>
+        </article>
+
+        <div class="gate" aria-label="验证门三">
+          <div class="gate-mark"><span>门</span></div>
+        </div>
+
+        <article class="phase four">
+          <div class="phase-top"><span class="phase-number">04</span></div>
+          <h2>跨品类验证</h2>
+          <p class="question">方法能否迁移？</p>
+          <p class="result"><strong>交付</strong><br>第二品类独立验证<br>适用边界</p>
+        </article>
+      </section>
+
+      <p class="principle">阶段推进依据：<strong>验证通过</strong>，不是日历到期</p>
+    </main>
+
+    <nav class="nav" aria-label="幻灯片导航">
+      <span>10 / 11</span>
+      <div class="nav-links">
+        <a href="p09.html" aria-label="上一页">← 上一页</a>
+        <a href="p11.html" aria-label="下一页">下一页 →</a>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    function fit() {
+      var s = innerWidth / 1920;
+      var stage = document.querySelector('.stage');
+      stage.style.transform = 'scale(' + s + ')';
+      document.body.style.height = (stage.offsetHeight * s) + 'px';
+    }
+    addEventListener('resize', fit); fit();
+    addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') location.href = 'p09.html';
+      if (event.key === 'ArrowRight') location.href = 'p11.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>失败必须可见，未知绝不补造</title>
+  <style>
+:root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+/* 基调：深海蓝背景、青绿色为唯一主强调色；高层阅读型、低装饰、强对齐。 */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+    }
+    .stage {
+      width: 1920px;
+      min-height: 1080px;
+      position: relative;
+      overflow: hidden;
+      transform-origin: top left;
+      padding: 64px 96px 56px;
+      background:
+        linear-gradient(130deg, var(--bg) 0%, var(--bg) 57%, var(--bg-soft) 100%);
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      right: -430px;
+      top: 250px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: .5;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: .15em;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 18px 0 0;
+      font-size: 68px;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      font-weight: 800;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 170px 1.15fr;
+      grid-template-rows: repeat(4, 126px);
+      column-gap: 22px;
+      row-gap: 10px;
+      margin-top: 42px;
+    }
+    .cell {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      padding: 20px 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 18px 44px var(--shadow);
+    }
+    .failure {
+      gap: 22px;
+      border-left: 4px solid var(--danger);
+    }
+    .status-dot {
+      flex: 0 0 auto;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--danger);
+      box-shadow: 0 0 0 9px var(--surface-2);
+    }
+    .cell-copy strong {
+      display: block;
+      color: var(--text);
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .cell-copy span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.35;
+    }
+    .route {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+    .route::before,
+    .route::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--line);
+    }
+    .route::before { margin-right: 12px; }
+    .route::after { margin-left: 12px; }
+    .behavior {
+      border-right: 4px solid var(--accent);
+      background: linear-gradient(90deg, var(--surface), var(--accent-soft));
+    }
+    .behavior strong { color: var(--accent); }
+    .risk {
+      display: grid;
+      grid-template-columns: 180px 1fr 600px;
+      align-items: center;
+      gap: 30px;
+      min-height: 92px;
+      margin-top: 20px;
+      padding: 18px 26px;
+      border-top: 1px solid var(--warning);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+    .risk-label {
+      color: var(--warning);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+    .risk-copy {
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .guardrail {
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.45;
+      text-align: right;
+    }
+    .guardrail b { color: var(--accent); }
+    .nav {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 22px;
+    }
+    .page-no {
+      color: var(--text);
+      font-family: var(--font-mono);
+      letter-spacing: .08em;
+    }
+    .nav-links { display: flex; gap: 16px; }
+    .nav a {
+      padding: 8px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <header>
+      <div class="eyebrow">VISIBLE FAILURE / EXPLICIT UNKNOWN</div>
+      <h1>失败必须可见，<br>未知绝不补造</h1>
+    </header>
+
+    <main>
+      <section class="comparison" aria-label="失败模式与产品行为">
+        <div class="cell failure">
+          <i class="status-dot" aria-hidden="true"></i>
+          <div class="cell-copy"><strong>访问不可读</strong><span>登录 / 付费 / 验证码 / 下线</span></div>
+        </div>
+        <div class="route">显式</div>
+        <div class="cell behavior"><div class="cell-copy"><strong>标记具体原因</strong><span>不绕过 · 不采购临时数据</span></div></div>
+
+        <div class="cell failure">
+          <i class="status-dot" aria-hidden="true"></i>
+          <div class="cell-copy"><strong>根来源不独立</strong><span>同源转载 / 独立性不明</span></div>
+        </div>
+        <div class="route">显式</div>
+        <div class="cell behavior"><div class="cell-copy"><strong>不增加计数</strong><span>独立根来源数保持不变</span></div></div>
+
+        <div class="cell failure">
+          <i class="status-dot" aria-hidden="true"></i>
+          <div class="cell-copy"><strong>确认未完成</strong><span>AI 错引 / 中断 / 截止未确认</span></div>
+        </div>
+        <div class="route">显式</div>
+        <div class="cell behavior"><div class="cell-copy"><strong>保留状态与最后位置</strong><span>未确认内容不进门槛</span></div></div>
+
+        <div class="cell failure">
+          <i class="status-dot" aria-hidden="true"></i>
+          <div class="cell-copy"><strong>追溯断裂</strong><span>引用断裂 / 版本不一致</span></div>
+        </div>
+        <div class="route">显式</div>
+        <div class="cell behavior"><div class="cell-copy"><strong>阻止冻结或派生</strong><span>不生成无追溯报告</span></div></div>
+      </section>
+
+      <section class="risk" aria-label="关键风险与限制措施">
+        <div class="risk-label">KEY RISK</div>
+        <div class="risk-copy">公开资料偏向易读取品类；严格台账也可能放大代理信号的可信感。</div>
+        <div class="guardrail"><b>配额 · 反证 · 人工回源 · 后验业务门</b><br>共同限制外推</div>
+      </section>
+    </main>
+
+    <nav class="nav" aria-label="幻灯片导航">
+      <div class="page-no">09 / 11</div>
+      <div class="nav-links">
+        <a href="p08.html">← 上一页</a>
+        <a href="p10.html">下一页 →</a>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    function fit() {
+      var s = innerWidth / 1920;
+      var stage = document.querySelector('.stage');
+      stage.style.transform = 'scale(' + s + ')';
+      document.body.style.height = (stage.offsetHeight * s) + 'px';
+    }
+    addEventListener('resize', fit); fit();
+    addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') location.href = 'p08.html';
+      if (event.key === 'ArrowRight') location.href = 'p10.html';
+    });
+  </script>
+</body>
+</html>

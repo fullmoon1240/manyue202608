@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>五天只购买一个决定，不提前购买一套系统</title>
+  <style>
+:root {
+  --bg: #07111F;
+  --bg-soft: #0C1728;
+  --surface: #101D30;
+  --surface-2: #15243A;
+  --text: #F5F8FC;
+  --muted: #9CB0C5;
+  --subtle: #60738A;
+  --accent: #35D0BA;
+  --accent-soft: #183D3A;
+  --success: #54D98C;
+  --warning: #F4B860;
+  --danger: #FF7171;
+  --line: #263952;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.28);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 72px;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+/* 基调：深海蓝背景、青绿色为唯一主强调色；高层阅读型、低装饰、强对齐。 */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+    .stage {
+      width: 1920px;
+      min-height: 1080px;
+      position: relative;
+      overflow: hidden;
+      transform-origin: top left;
+      background:
+        linear-gradient(120deg, var(--bg) 0%, var(--bg) 52%, var(--bg-soft) 100%);
+      padding: 72px 96px 58px;
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      left: -280px;
+      top: 260px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: .55;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      width: 1510px;
+      margin: 18px 0 0;
+      font-size: 68px;
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      font-weight: 800;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 610px 1fr;
+      gap: 92px;
+      margin-top: 58px;
+      align-items: stretch;
+    }
+    .hero {
+      min-height: 650px;
+      position: relative;
+      padding: 46px 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, var(--surface-2), var(--surface));
+      box-shadow: 0 28px 80px var(--shadow);
+    }
+    .days {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 144px;
+      line-height: .86;
+      letter-spacing: -.09em;
+      font-weight: 800;
+    }
+    .days span {
+      display: block;
+      margin-top: 22px;
+      color: var(--text);
+      font-size: 54px;
+      letter-spacing: .04em;
+    }
+    .person {
+      position: absolute;
+      right: 58px;
+      bottom: 136px;
+      width: 170px;
+      height: 230px;
+    }
+    .person::before {
+      content: "";
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      left: 46px;
+      top: 0;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .person::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 130px;
+      left: 0;
+      bottom: 0;
+      border-radius: 86px 86px 20px 20px;
+      background: var(--accent-soft);
+      border: 2px solid var(--accent);
+    }
+    .solo {
+      position: absolute;
+      left: 42px;
+      bottom: 44px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--text);
+      font-size: 26px;
+      font-weight: 700;
+    }
+    .solo::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px var(--accent-soft);
+    }
+    .zero-row {
+      position: absolute;
+      left: 42px;
+      bottom: 94px;
+      display: flex;
+      gap: 14px;
+    }
+    .zero {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      font-size: 22px;
+      background: var(--bg-soft);
+    }
+    .zero strong { color: var(--warning); }
+    .right {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr) auto;
+      gap: 14px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      align-items: center;
+      gap: 30px;
+      padding: 24px 30px;
+      border-top: 1px solid var(--line);
+    }
+    .step:first-child { border-top: 0; }
+    .step-index {
+      color: var(--subtle);
+      font-family: var(--font-mono);
+      font-size: 22px;
+      letter-spacing: .14em;
+    }
+    .step-index strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+    .step-copy {
+      color: var(--text);
+      font-size: 28px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+    .step-copy em {
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+    .decision {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 104px;
+      padding: 24px 30px;
+      border-radius: var(--radius-md);
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 31px;
+      font-weight: 800;
+    }
+    .decision b {
+      font-family: var(--font-mono);
+      font-size: 48px;
+      letter-spacing: -.04em;
+    }
+    .nav {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 22px;
+    }
+    .nav-links { display: flex; gap: 16px; }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+    .page-no {
+      color: var(--text);
+      font-family: var(--font-mono);
+      letter-spacing: .08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <header>
+      <div class="eyebrow">MVP / DECISION PURCHASE</div>
+      <h1>五天只购买一个决定，<br>不提前购买一套系统</h1>
+    </header>
+
+    <main class="content">
+      <section class="hero" aria-label="五天单人研究边界">
+        <div class="days">5<span>DAYS</span></div>
+        <div class="person" aria-hidden="true"></div>
+        <div class="zero-row">
+          <div class="zero"><strong>0</strong> 新增账号</div>
+          <div class="zero"><strong>0</strong> 付费数据</div>
+        </div>
+        <div class="solo">1 名当前研究者</div>
+      </section>
+
+      <section class="right" aria-label="输入处理输出与决策">
+        <div class="step">
+          <div class="step-index">01<strong>输入</strong></div>
+          <div class="step-copy">国内天猫 × 猫狗用品<br><em>无需登录、无需付费的公开资料</em></div>
+        </div>
+        <div class="step">
+          <div class="step-index">02<strong>处理</strong></div>
+          <div class="step-copy">固定配额扫描 → 人工回源<br><em>候选硬门槛 → 冻结台账</em></div>
+        </div>
+        <div class="step">
+          <div class="step-index">03<strong>输出</strong></div>
+          <div class="step-copy">全部达标摘要<br><em>0—5 份完整报告</em></div>
+        </div>
+        <div class="decision"><span>最终只交付</span><b>1 个下一步决定</b></div>
+      </section>
+    </main>
+
+    <nav class="nav" aria-label="幻灯片导航">
+      <div class="page-no">02 / 11</div>
+      <div class="nav-links">
+        <a href="p01.html">← 上一页</a>
+        <a href="p03.html">下一页 →</a>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    function fit() {
+      var s = innerWidth / 1920;
+      var stage = document.querySelector('.stage');
+      stage.style.transform = 'scale(' + s + ')';
+      document.body.style.height = (stage.offsetHeight * s) + 'px';
+    }
+    addEventListener('resize', fit); fit();
+    addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') location.href = 'p01.html';
+      if (event.key === 'ArrowRight') location.href = 'p03.html';
+    });
+  </script>
+</body>
+</html>

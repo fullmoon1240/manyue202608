@@ -1,0 +1,932 @@
+[
+  {
+    "page": "p01",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "先证明机会研究有效，再决定要不要建雷达",
+        "client": [
+          920,
+          175
+        ],
+        "scroll": [
+          920,
+          185
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p02",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "五天只购买一个决定，不提前购买一套系统",
+        "client": [
+          1510,
+          152
+        ],
+        "scroll": [
+          1510,
+          161
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "days",
+        "text": "5DAYS",
+        "client": [
+          524,
+          192
+        ],
+        "scroll": [
+          524,
+          200
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "",
+        "text": "DAYS",
+        "client": [
+          524,
+          46
+        ],
+        "scroll": [
+          524,
+          54
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p03",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "真正的缺口不是“没有数据”，而是判断无法被复核",
+        "client": [
+          1540,
+          152
+        ],
+        "scroll": [
+          1540,
+          161
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "panel-title",
+        "text": "当前：断裂的判断链",
+        "client": [
+          288,
+          38
+        ],
+        "scroll": [
+          288,
+          41
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "chain",
+        "text": "市场信号\n            个人经验\n            产品选择\n           ",
+        "client": [
+          696,
+          156
+        ],
+        "scroll": [
+          696,
+          158
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "panel-title",
+        "text": "需要：完整的证据链",
+        "client": [
+          288,
+          38
+        ],
+        "scroll": [
+          288,
+          41
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p04",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "“几百万销售额”是后验目标，五天先降低选错方向的概率",
+        "client": [
+          1500,
+          148
+        ],
+        "scroll": [
+          1500,
+          156
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "3,126",
+        "client": [
+          209,
+          76
+        ],
+        "scroll": [
+          209,
+          81
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "metric",
+        "text": "12.2%宠物用品占比",
+        "client": [
+          703,
+          76
+        ],
+        "scroll": [
+          703,
+          81
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "12.2%",
+        "client": [
+          209,
+          76
+        ],
+        "scroll": [
+          209,
+          81
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "286",
+        "client": [
+          125,
+          76
+        ],
+        "scroll": [
+          125,
+          81
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "公开证据筛选",
+        "client": [
+          718,
+          36
+        ],
+        "scroll": [
+          718,
+          38
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "业务采用与一手验证",
+        "client": [
+          718,
+          36
+        ],
+        "scroll": [
+          718,
+          38
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "上架与真实销售回写",
+        "client": [
+          718,
+          36
+        ],
+        "scroll": [
+          718,
+          38
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p05",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "一条七步研究路径，把模糊搜索变成可冻结结果",
+        "client": [
+          1600,
+          148
+        ],
+        "scroll": [
+          1600,
+          156
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "锁定边界",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "来源预检",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "配额扫描",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "人工确认",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "候选分流",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "台账冻结",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "派生结果",
+        "client": [
+          226,
+          35
+        ],
+        "scroll": [
+          226,
+          37
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p06",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "单一热度、单一转载或 AI 判断，都不能让候选过门槛",
+        "client": [
+          1570,
+          148
+        ],
+        "scroll": [
+          1570,
+          156
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "",
+        "text": "→ 观察池或已排除",
+        "client": [
+          183,
+          26
+        ],
+        "scroll": [
+          183,
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p07",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "结果可以是零，但下一步必须唯一",
+        "client": [
+          1728,
+          150
+        ],
+        "scroll": [
+          1728,
+          159
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "达标候选",
+        "client": [
+          193,
+          34
+        ],
+        "scroll": [
+          193,
+          36
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "达标候选",
+        "client": [
+          193,
+          34
+        ],
+        "scroll": [
+          193,
+          36
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "达标候选",
+        "client": [
+          193,
+          34
+        ],
+        "scroll": [
+          193,
+          36
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "5",
+        "client": [
+          490,
+          92
+        ],
+        "scroll": [
+          490,
+          99
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p08",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "一个冻结台账，保证摘要与报告只讲同一套事实",
+        "client": [
+          1480,
+          74
+        ],
+        "scroll": [
+          1480,
+          82
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "object",
+        "text": "SRC来源页面、报告可读状态",
+        "client": [
+          188,
+          270
+        ],
+        "scroll": [
+          201,
+          270
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "object",
+        "text": "EVD证据最短引文类别与定位",
+        "client": [
+          188,
+          270
+        ],
+        "scroll": [
+          201,
+          270
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "object",
+        "text": "CLM判断事实、推断未知与方向",
+        "client": [
+          188,
+          270
+        ],
+        "scroll": [
+          201,
+          270
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p09",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 2350,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "失败必须可见，未知绝不补造",
+        "client": [
+          1728,
+          147
+        ],
+        "scroll": [
+          1728,
+          157
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "访问不可读",
+        "client": [
+          275,
+          35
+        ],
+        "scroll": [
+          275,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "标记具体原因",
+        "client": [
+          246,
+          35
+        ],
+        "scroll": [
+          246,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "根来源不独立",
+        "client": [
+          224,
+          35
+        ],
+        "scroll": [
+          224,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "不增加计数",
+        "client": [
+          220,
+          35
+        ],
+        "scroll": [
+          220,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "确认未完成",
+        "client": [
+          276,
+          35
+        ],
+        "scroll": [
+          276,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "保留状态与最后位置",
+        "client": [
+          252,
+          35
+        ],
+        "scroll": [
+          252,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "追溯断裂",
+        "client": [
+          224,
+          35
+        ],
+        "scroll": [
+          224,
+          37
+        ]
+      },
+      {
+        "tag": "STRONG",
+        "className": "",
+        "text": "阻止冻结或派生",
+        "client": [
+          196,
+          35
+        ],
+        "scroll": [
+          196,
+          37
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p10",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "持续雷达是第三阶段，不是五天 MVP",
+        "client": [
+          1560,
+          150
+        ],
+        "scroll": [
+          1560,
+          159
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "phase-top",
+        "text": "01\n            当前范围",
+        "client": [
+          361,
+          42
+        ],
+        "scroll": [
+          361,
+          44
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "phase-number",
+        "text": "01",
+        "client": [
+          48,
+          40
+        ],
+        "scroll": [
+          48,
+          43
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "gate",
+        "text": "门",
+        "client": [
+          84,
+          60
+        ],
+        "scroll": [
+          84,
+          72
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "phase-top",
+        "text": "02",
+        "client": [
+          288,
+          40
+        ],
+        "scroll": [
+          288,
+          43
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "phase-number",
+        "text": "02",
+        "client": [
+          48,
+          40
+        ],
+        "scroll": [
+          48,
+          43
+        ]
+      },
+      {
+        "tag": "H2",
+        "className": "",
+        "text": "业务采用与可行性",
+        "client": [
+          288,
+          78
+        ],
+        "scroll": [
+          288,
+          81
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "gate",
+        "text": "门",
+        "client": [
+          84,
+          60
+        ],
+        "scroll": [
+          84,
+          72
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "phase-top",
+        "text": "03",
+        "client": [
+          288,
+          40
+        ],
+        "scroll": [
+          288,
+          43
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "phase-number",
+        "text": "03",
+        "client": [
+          48,
+          40
+        ],
+        "scroll": [
+          48,
+          43
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "gate",
+        "text": "门",
+        "client": [
+          84,
+          60
+        ],
+        "scroll": [
+          84,
+          72
+        ]
+      },
+      {
+        "tag": "DIV",
+        "className": "phase-top",
+        "text": "04",
+        "client": [
+          288,
+          40
+        ],
+        "scroll": [
+          288,
+          43
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "className": "phase-number",
+        "text": "04",
+        "client": [
+          48,
+          40
+        ],
+        "scroll": [
+          48,
+          43
+        ]
+      }
+    ]
+  },
+  {
+    "page": "p11",
+    "stage": {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    "body": {
+      "width": 1920,
+      "height": 1080
+    },
+    "outside": [],
+    "clipped": [
+      {
+        "tag": "H1",
+        "className": "",
+        "text": "本次只交付 F01—F05；完成不等于路线通过",
+        "client": [
+          1684,
+          74
+        ],
+        "scroll": [
+          1684,
+          82
+        ]
+      }
+    ]
+  }
+]
