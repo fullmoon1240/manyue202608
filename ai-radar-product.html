@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI新品机会雷达 · 生产版</title>
+<style>
+  :root {
+    --bg: #F6F8F5; --surface: #FFFFFF; --fg: #172321; --muted: #4F6260;
+    --accent: #0B6B61; --border: #82938E; --success: #26734D;
+    --warn: #8A5A00; --danger: #B42318;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font: 400 15px/1.7 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 64px 24px 80px; }
+  header { text-align: center; margin-bottom: 56px; }
+  h1 { font-size: 40px; letter-spacing: -0.025em; }
+  .sub { color: var(--muted); margin-top: 12px; font-size: 17px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .badges { margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .badge { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); font-size: 13px; font-weight: 600; }
+  .badge--ok { border-color: var(--success); color: var(--success); }
+  section { margin-bottom: 56px; }
+  h2 { font-size: 24px; letter-spacing: -0.015em; margin-bottom: 8px; }
+  .lead { color: var(--muted); margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .card img { width: 100%; display: block; }
+  .card .name { padding: 12px 16px; font-weight: 600; font-size: 14px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .metric { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; }
+  .metric .num { font-size: 32px; font-weight: 700; color: var(--accent); }
+  .metric .label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+  .feature h3 { font-size: 15px; margin-bottom: 8px; color: var(--accent); }
+  .feature p { color: var(--muted); font-size: 14px; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 48px; }
+  code { background: #EDF1EE; padding: 2px 6px; border-radius: 6px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI 新品机会雷达</h1>
+    <p class="sub">为趣然打造的单人公开证据研究工作台：五天、只靠公开免费资料，对国内天猫猫狗用品跨子类扫描，产出可回源的机会假设与唯一下一步决定。</p>
+    <div class="badges">
+      <span class="badge badge--ok">生产版 · 已验收 26/26</span>
+      <span class="badge">本地优先 · 数据不出本机</span>
+      <span class="badge">React + FastAPI + SQLite</span>
+      <span class="badge">冻结版本不可篡改</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>产品界面</h2>
+    <p class="lead">六阶段工作台：项目总览 → 来源预检 → 扫描执行 → 候选审查 → 冻结归档 → 结果决策。</p>
+    <div class="grid">
+      <div class="card"><img src="product-shots/PAGE-F01-01-actual.png" alt="项目总览"><div class="name">① 项目总览 · 边界/进度/配额/候选/唯一主动作</div></div>
+      <div class="card"><img src="product-shots/PAGE-F01-02-actual.png" alt="来源预检"><div class="name">② 来源预检 · 两类必需来源可读性判定</div></div>
+      <div class="card"><img src="product-shots/PAGE-F02-01-actual.png" alt="扫描执行"><div class="name">③ 扫描执行 · 6/30 配额、AI 任务、停止原因</div></div>
+      <div class="card"><img src="product-shots/PAGE-F03-01-actual.png" alt="候选审查"><div class="name">④ 候选审查 · 证据门槛矩阵与终态分流</div></div>
+      <div class="card"><img src="product-shots/PAGE-F05-01-actual.png" alt="冻结归档"><div class="name">⑤ 冻结归档 · 版本号/内容指纹/本地备份</div></div>
+      <div class="card"><img src="product-shots/PAGE-F04-01-actual.png" alt="结果决策"><div class="name">⑥ 结果决策 · 0-5 份报告与唯一下一步</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>验收数据</h2>
+    <p class="lead">TDD 验收契约逐项真实执行，全部通过。</p>
+    <div class="metrics">
+      <div class="metric"><div class="num">26/26</div><div class="label">TDD 验收通过（冒烟/流程/规则/视觉）</div></div>
+      <div class="metric"><div class="num">71/71</div><div class="label">需求契约覆盖（22 REQ + 43 AC + 6 NFR）</div></div>
+      <div class="metric"><div class="num">32</div><div class="label">后端自动化测试通过</div></div>
+      <div class="metric"><div class="num">6/6</div><div class="label">MVP 页面实现与视觉验收</div></div>
+      <div class="metric"><div class="num">100%</div><div class="label">关键判断可回源（页面定位/采集日/统计期）</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>核心能力</h2>
+    <div class="features">
+      <div class="feature"><h3>固定边界与配额</h3><p>五个起始词簇 × 每簇 6 条、全轮 30 条、最多 8 个候选、2 轮扩展——范围可控，失败显式留痕。</p></div>
+      <div class="feature"><h3>候选硬门槛</h3><p>双类型已确认证据 + ≥2 个独立根来源 + 候选特定反证 + 关键项 100% 人工回源，弱信号无法包装成机会。</p></div>
+      <div class="feature"><h3>不可篡改冻结</h3><p>冻结生成唯一版本号与 SHA-256 内容指纹，历史只读、跨轮只溯源，自动本地备份并可安全恢复。</p></div>
+      <div class="feature"><h3>唯一下一步</h3><p>0 个 → 停止公开数据路线；1-2 个 → 保留一次性人工研究；3-8 个 → 寻找具名业务接收者。</p></div>
+      <div class="feature"><h3>真实公开来源</h3><p>公开 URL 真实抓取与关键词检索（非演示数据），登录/付费/验证码来源一律标为不可读且不绕过。</p></div>
+      <div class="feature"><h3>隐私与边界</h3><p>只存最短必要摘录，不存完整网页/凭据/PII；服务只监听本机回环地址。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>运行方式</h2>
+    <p class="lead">生产版为本地优先应用，数据保存在研究者电脑（安全边界：无账号体系，不对外网暴露）。启动命令：</p>
+    <div class="card" style="padding: 20px;">
+      <p><code>cd backend && .venv/bin/uvicorn app.main:app --port 8000</code> 启动后端</p>
+      <p style="margin-top:8px"><code>cd frontend && npm run dev</code> 启动前端，浏览器打开 <code>http://127.0.0.1:5173</code></p>
+    </div>
+  </section>
+
+  <footer>AI 新品机会雷达 · 趣然五天 MVP 生产版 · 2026-08 · 本页为产品展示，真实应用按规格仅在本机运行</footer>
+</div>
+</body>
+</html>
